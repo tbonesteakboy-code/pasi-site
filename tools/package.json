@@ -1,0 +1,17 @@
+{
+  "name": "pasi-site-tools",
+  "private": true,
+  "type": "module",
+  "description": "Build helpers for the static pasi.llc site (image conversion, link-preview image). Not deployed.",
+  "scripts": {
+    "images": "node build-images.mjs",
+    "og": "node build-og.mjs"
+  },
+  "devDependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/playfair-display": "^5.3.0",
+    "@resvg/resvg-js": "^2.6.2",
+    "satori": "^0.18.4",
+    "sharp": "^0.34.5"
+  }
+}

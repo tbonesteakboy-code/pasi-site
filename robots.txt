@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /
+# Preview: allow everything at launch.
