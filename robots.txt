@@ -1,3 +1,4 @@
 User-agent: *
-Disallow: /
-# Preview: allow everything at launch.
+Allow: /
+
+Sitemap: https://pasi.llc/sitemap.xml
