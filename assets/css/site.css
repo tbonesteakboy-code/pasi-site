@@ -154,3 +154,5 @@ p { margin: 0 0 1em; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 10px 26px; }
 .footer-links a { min-height: 44px; display: inline-flex; align-items: center; }
 .footer-brand { font-family: var(--serif); font-weight: 700; font-size: 1.5rem; letter-spacing: .06em; color: #fff; }
+/* Text for screen readers only (e.g. "opens a form in a new tab"). */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
