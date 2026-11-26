@@ -1,0 +1,207 @@
+---
+layout: base.njk
+title: "DossierIQ by PASI | From boxes of paper to a Medicaid-ready file"
+ogTitle: "DossierIQ: from boxes of paper to a Medicaid-ready file"
+description: "DossierIQ scans, sorts and checks a client's documents for elder law and estate firms: see what's on file, what's missing, and share securely with a custody log. Now taking founding firms."
+# Sep 2021 to Aug 2026, one letter per month: o on file, m missing, r to review (the product views are drawn, with fictional data).
+checking: "ooooooooooooooooooommmoooooooooooommmoooooooooooooorrooooooo"
+savings: "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo"
+---
+<section class="hero wrap">
+  <h1>From boxes of paper to a Medicaid-ready file.</h1>
+  <p class="sub">DossierIQ scans, sorts and checks a client's documents, so your team can see what's on file, what's missing, and send it securely. Built for elder law and estate practices, starting with Medicaid planning.</p>
+  <div class="cta">
+    <a class="btn btn-primary btn-lg" href="{{ site.formUrl }}" target="_blank" rel="noopener">Become a founding firm<span class="sr-only"> (opens a form in a new tab)</span></a>
+    <a class="btn btn-lg" href="#how">See how it works</a>
+  </div>
+  <p class="fine">Now taking a small number of founding firms. No cost during the pilot.</p>
+</section>
+
+<div class="stage">
+  <div class="wrap">
+    <figure class="product">
+      <div class="app" role="img" aria-label="DossierIQ's matter screen for a fictional Medicaid planning client: the checklist with bank statements selected, showing statement coverage month by month for the 60-month look-back, with missing months and months to review.">
+        <div class="app-nav" aria-hidden="true">
+          <div class="app-brand"><img src="/assets/brand/dossieriq-mark-24-light.svg" alt="" width="18" height="18"><span>DossierIQ<small>PASI Demo Firm</small></span></div>
+          <span>Matters</span>
+          <div class="app-matter">Harold E. Whitcomb<small>DEMO-001</small></div>
+          <span class="sub on">Checklist</span><span class="sub">Coverage</span><span class="sub">Documents</span><span class="sub">Requests</span><span class="sub">People</span>
+        </div>
+        <div class="app-mid" aria-hidden="true">
+          <p class="app-title">Harold E. Whitcomb</p>
+          <p class="app-meta">Medicaid planning. 166 documents, 2 to review.</p>
+          <p class="app-sect">Checklist</p>
+          <p class="app-grp">Needs you, 4</p>
+          <div class="app-row sel"><span><b>Bank statements</b><small>6 months missing, 2 to review</small></span><span class="dot dot-review">To review</span></div>
+          <div class="app-row"><span><b>Life insurance</b><small>Premiums to Harbor Mutual found</small></span><span class="dot dot-missing">Missing</span></div>
+          <div class="app-row"><span><b>Annuities</b></span><span class="dot dot-missing">Missing</span></div>
+          <div class="app-row"><span><b>Mortgage statements</b></span><span class="dot dot-missing">Missing</span></div>
+          <p class="app-grp">Waiting on the family, 1</p>
+          <div class="app-row"><span><b>Federal income tax returns</b><small>Requested</small></span><span class="dot dot-requested">Requested</span></div>
+          <p class="app-grp">On file, 12</p>
+        </div>
+        <div class="app-side" aria-hidden="true">
+          <p class="app-eyebrow">Checklist item, critical</p>
+          <p class="app-item">Bank statements</p>
+          <p><span class="dot dot-review">2 to review, 6 months missing</span></p>
+          <p class="app-label">Statement coverage, Sep 2021 to Aug 2026</p>
+          <div class="acct"><span>Brightwater Community Bank …4037</span><span>52/60</span></div>
+          <div class="strip">{% for c in checking | months %}<i class="{{ c }}"></i>{% endfor %}</div>
+          <div class="years"><span></span><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span></div>
+          <p class="app-label">How to get it</p>
+          <p class="app-text">Ways to get it, by who acts, with official sources.</p>
+          <div class="app-foot"><span class="mini mini-primary">Request missing months</span><span class="mini">Already requested</span></div>
+        </div>
+      </div>
+      <figcaption>A demo firm with a fictional client and accounts.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<section class="section wrap problem" aria-labelledby="problem-h">
+  <div>
+    <h2 id="problem-h">The paperwork shouldn't be the hardest part.</h2>
+    <p>A Medicaid application can mean five years of statements for every account a client has ever had, arriving as shoeboxes, envelopes, email attachments and half-remembered online logins. Your staff scan it, rename it, file it, chase what's missing, and email it out again, usually against a deadline. One missing month can mean a denial for “failure to verify.”</p>
+  </div>
+  <ul class="ruled">
+    <li><b>Paper keeps coming.</b> Clients and families bring what they have, in whatever order they find it.</li>
+    <li><b>Gaps are hard to see.</b> Knowing which months are missing for which account means checking page by page.</li>
+    <li><b>Sending is risky.</b> Email attachments of bank statements and IDs travel with no record of who opened them.</li>
+  </ul>
+</section>
+
+<section id="how" aria-labelledby="how-h">
+  <div class="wrap section-head">
+    <h2 id="how-h">Three steps from paper to proof.</h2>
+    <p>Open a matter, choose its type, such as Medicaid planning, and DossierIQ sets up the folders. Then scan, check and send.</p>
+  </div>
+
+  <div class="wrap feat">
+    <div>
+      <p class="step">1. Scan and upload</p>
+      <h3>It reads the boxes so your paralegal doesn't have to.</h3>
+      <p>Scan a stack of paper on your office PC. DossierIQ Scan splits it into individual documents, names each one, and files it in the matter's folder in your firm's own Google Drive or SharePoint. You can also upload files and email exports. Anything uncertain is flagged for your review.</p>
+    </div>
+    <div class="moment" role="img" aria-label="A list of scanned documents DossierIQ Scan split and named, one flagged for review.">
+      <div class="card" aria-hidden="true">
+        <p class="card-head"><b>Scanned stack, 9 pages</b><span>8 documents</span></p>
+        <ol class="files">
+          <li><span>2026-02-09 Death Certificate</span><span class="dot dot-onfile">Filed</span></li>
+          <li><span>2026-02-27 Letters Testamentary</span><span class="dot dot-onfile">Filed</span></li>
+          <li><span>2026-03-31 Estate Account Statement</span><span class="dot dot-onfile">Filed</span></li>
+          <li><span>2026-04-02 Insurance Claim Letter</span><span class="dot dot-review">To review</span></li>
+          <li><span>2026-04-15 Final Utility Bill</span><span class="dot dot-onfile">Filed</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap feat">
+    <div>
+      <p class="step">2. Check</p>
+      <h3>See the whole look-back at a glance.</h3>
+      <p>Each matter type has a checklist of the documents that matter most. DossierIQ shows what's on file, what's missing, and statement coverage month by month for the look-back, and your staff confirm each match.</p>
+    </div>
+    <div class="moment" role="img" aria-label="Statement coverage for two fictional bank accounts over 60 months: one complete, one with missing months.">
+      <div class="card" aria-hidden="true">
+        <div class="acct"><b>Brightwater Community Bank …4037</b><span>52 of 60 months</span></div>
+        <div class="strip strip-lg">{% for c in checking | months %}<i class="{{ c }}"></i>{% endfor %}</div>
+        <div class="years"><span></span><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span></div>
+        <p class="card-note">Missing Apr to Jun 2023 and Jul to Sep 2024. 2 months to review.</p>
+        <div class="acct acct-gap"><b>Brightwater Savings …4052</b><span>60 of 60 months</span></div>
+        <div class="strip strip-lg">{% for c in savings | months %}<i class="{{ c }}"></i>{% endfor %}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap feat">
+    <div>
+      <p class="step">3. Send</p>
+      <h3>Share what's needed, with a record of every view.</h3>
+      <p>Send documents through an expiring link instead of an attachment. Recipients verify with a one-time code, files can be watermarked and download-limited, and every view and download goes into a tamper-evident custody log.</p>
+    </div>
+    <div class="moment" role="img" aria-label="A secure share of four documents: expires in 14 days, needs a one-time code, watermarked, with a custody log of views and downloads.">
+      <div class="card" aria-hidden="true">
+        <p class="card-head"><b>Secure share, 4 documents</b><span>Expires in 14 days</span></p>
+        <ul class="facts">
+          <li>One-time code to open</li>
+          <li>Watermarked, 2 downloads each</li>
+        </ul>
+        <p class="card-label">Custody log</p>
+        <ol class="log">
+          <li><span>Code verified</span><span>Nov 12, 10:04</span></li>
+          <li><span>Viewed 2026-03-31 Estate Account Statement</span><span>10:05</span></li>
+          <li><span>Downloaded 2026-03-31 Estate Account Statement</span><span>10:06</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" id="elder-law" aria-labelledby="elder-h">
+  <h2 id="elder-h">Built for elder law, not borrowed from litigation software.</h2>
+  <p class="section-lead">Most practice management tools are designed around litigation. DossierIQ starts from the work elder law firms actually do: gathering a lifetime of records, proving five years of statements, and finding the accounts nobody wrote down.</p>
+  <div class="specifics">
+    <div><b>The 60-month look-back</b><span>Coverage tracked by account and by month, so gaps show up before the caseworker finds them.</span></div>
+    <div><b>Medicaid packet export</b><span>Documents grouped by checklist item, with a cover sheet listing what's included and what's still missing.</span></div>
+    <div><b>The digital estate</b><span>Upload a client's email export and DossierIQ surfaces online accounts and recurring charges, so subscriptions and accounts don't get missed.</span></div>
+    <div><b>Your judgment stays in charge</b><span>DossierIQ organizes and flags; attorneys and staff confirm. It's guidance, not legal advice.</span></div>
+    <div><b>Google Workspace and Microsoft 365</b><span>Keep documents in your firm's Google Drive or SharePoint, and sign in with a Google or Microsoft work account.</span></div>
+  </div>
+  <p class="closing">Behind every file is a family trying to get it right.</p>
+</section>
+
+<section class="section wrap" id="security" aria-labelledby="security-h">
+  <h2 id="security-h">Your clients' documents stay yours.</h2>
+  <p class="section-lead">Elder law files hold the most sensitive information a family has. We built DossierIQ with that in mind, and we'll only tell you what's true today.</p>
+  <ul class="ruled ruled-2">
+    <li><b>Firm-owned storage.</b> Documents are stored in your firm's own Google Drive or SharePoint, not in a DossierIQ warehouse.</li>
+    <li><b>Secure sharing with a record.</b> Clean Room links expire, require a one-time code, and record every view and download in a tamper-evident log.</li>
+    <li><b>Authority before access.</b> Sensitive discovery steps, like connecting a client's mailbox, require a recorded statement of the firm's authority first.</li>
+    <li><b>Encrypted nightly backups.</b> Every night the DossierIQ server and database are backed up, encrypted, and copied off-site, in addition to daily, weekly and monthly copies kept locally. We've verified those off-site backups can be recovered.</li>
+    <li><b>Encryption at rest for connections.</b> The keys DossierIQ uses to reach your storage are encrypted at rest.</li>
+    <li><b>Credentials are never shared.</b> Documents marked as login credentials can't be sent through a share link or included in downloads.</li>
+    <li><b>We don't sell your data.</b> Not your firm's, not your clients'.</li>
+  </ul>
+  <p class="fine">Questions about how DossierIQ handles data? Email <a href="mailto:{{ site.email }}">{{ site.email }}</a> and we'll walk you through it.</p>
+</section>
+
+<section class="band" id="founding" aria-labelledby="founding-h">
+  <div class="wrap">
+    <div class="band-rule"></div>
+    <h2 id="founding-h">Help shape DossierIQ as a founding firm.</h2>
+    <p class="band-lead">We're working closely with a small group of elder law and estate firms to make DossierIQ fit real practice. We're starting in Pennsylvania and glad to hear from firms anywhere in the US.</p>
+    <div class="band-two">
+      <div>
+        <h3>What your firm gets</h3>
+        <ul>
+          <li>DossierIQ at no cost during the pilot</li>
+          <li>Hands-on setup and training for your team</li>
+          <li>A direct line to the founder; your feedback shapes what we build next</li>
+        </ul>
+      </div>
+      <div>
+        <h3>What we ask</h3>
+        <ul>
+          <li>Use DossierIQ on real matters for the pilot period</li>
+          <li>Short feedback conversations along the way</li>
+          <li>If it helps you, a reference or a brief case study (only with your permission)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cta">
+      <a class="btn btn-light btn-lg" href="{{ site.formUrl }}" target="_blank" rel="noopener">Become a founding firm<span class="sr-only"> (opens a form in a new tab)</span></a>
+    </div>
+    <p class="band-fine">Using Google Workspace or Microsoft 365? Either works.</p>
+  </div>
+</section>
+
+<section class="section wrap about" id="about" aria-labelledby="about-h">
+  <h2 id="about-h">About PASI</h2>
+  <p>Privileged Access Solutions Integration, LLC (PASI) builds secure software for professionals who handle sensitive information. DossierIQ is our flagship product.</p>
+  <h3>Why we built DossierIQ</h3>
+  <p>DossierIQ started at a kitchen table. When a parent in our family needed long-term care, we spent months gathering five years of bank statements, tax returns and insurance papers, then gathering them again when something went missing. The attorneys and staff helping us were excellent, and they were buried in the same paper.</p>
+  <p>PASI was founded by a technology professional with a background in protecting sensitive information. DossierIQ brings that same care to the files families trust their lawyers with: documents stay in the firm's own storage, every secure share is logged, and nothing is sold.</p>
+  <p>If your office spends its days chasing paperwork, we'd like to hear from you.</p>
+  <p class="signoff">Founder, PASI</p>
+</section>

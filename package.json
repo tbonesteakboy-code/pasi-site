@@ -1,0 +1,13 @@
+{
+  "name": "pasi-site",
+  "private": true,
+  "description": "pasi.llc: a static site built with Eleventy, published to GitHub Pages by a GitHub Action. No analytics, cookies or third-party requests.",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve --port 8099"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.8"
+  },
+  "type": "module"
+}

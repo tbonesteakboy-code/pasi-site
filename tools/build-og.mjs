@@ -1,51 +1,37 @@
-// Builds the 1200×630 link-preview image (og:image): the Midjourney background with the DossierIQ shield, name and
-// headline set in code (never generated text). Run: npm run og
+// Builds the 1200x630 link-preview image (og:image) in direction A: white, the PASI wordmark, the headline in Instrument
+// Sans, and a drawn 60-month coverage strip (fictional, as on the Home page). All text is set in code. Run: npm run og
+// Output: ../src/assets/img/og.png (PNG from code, so it carries no camera or editing metadata).
 import satori from 'satori';
 import { Resvg } from '@resvg/resvg-js';
 import sharp from 'sharp';
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 
-const SRC = process.env.SRC ?? 'C:/ClaudeCode_Files/marketing/site-images';
-const font = (pkg, file) => readFileSync(path.join('node_modules', '@fontsource', pkg, 'files', file));
+const font = (file) => readFileSync(path.join('node_modules', '@fontsource', 'instrument-sans', 'files', file));
+const wordmark = readFileSync(path.resolve('..', 'src', 'assets', 'brand', 'pasi-wordmark-light.svg'));
+const months = 'ooooooooooooooooooommmoooooooooooommmoooooooooooooorrooooooo';
+const colour = { o: '#CDC9F6', m: '#DC3B42', r: '#E3A008' };
 
-const bg = await sharp(path.join(SRC, 'og-background.png')).resize(1200, 630, { fit: 'cover' }).jpeg({ quality: 88 }).toBuffer();
-const shield =
-  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
-  '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>' +
-  '<path d="m9 12 2 2 4-4"/></svg>';
-
-const h = (type, style, children) => ({ type, props: { style, children } });
-const tree = h(
-  'div',
-  { width: 1200, height: 630, display: 'flex', position: 'relative', fontFamily: 'Inter' },
-  [
-    { type: 'img', props: { src: `data:image/jpeg;base64,${bg.toString('base64')}`, width: 1200, height: 630, style: { position: 'absolute', top: 0, left: 0 } } },
-    h('div', { position: 'absolute', top: 0, left: 0, width: 760, height: 630, display: 'flex', backgroundImage: 'linear-gradient(90deg, rgba(15,23,42,0.92) 0%, rgba(15,23,42,0.75) 65%, rgba(15,23,42,0) 100%)' }, []),
-    h('div', { position: 'absolute', top: 0, left: 0, width: 720, height: 630, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 72px' }, [
-      h('div', { display: 'flex', alignItems: 'center', marginBottom: 28 }, [
-        h('div', { width: 64, height: 64, borderRadius: 14, backgroundColor: '#10b981', display: 'flex', alignItems: 'center', justifyContent: 'center', marginRight: 18 }, [
-          { type: 'img', props: { src: `data:image/svg+xml;base64,${Buffer.from(shield).toString('base64')}`, width: 40, height: 40 } },
-        ]),
-        h('div', { fontFamily: 'Playfair Display', fontWeight: 700, fontSize: 48, color: '#ffffff' }, 'DossierIQ™'),
-      ]),
-      h('div', { fontFamily: 'Playfair Display', fontWeight: 600, fontSize: 54, lineHeight: 1.15, color: '#ffffff' }, 'From boxes of paper to a Medicaid-ready file.'),
-      h('div', { marginTop: 26, fontSize: 26, color: '#a7f3d0' }, 'Built for elder law and estate firms'),
-      h('div', { marginTop: 34, fontSize: 22, color: '#cbd5e1', letterSpacing: 1 }, 'pasi.llc'),
-    ]),
-  ],
-);
+const h = (type, style, children) => ({ type, props: { style: { display: 'flex', ...style }, children } });
+const tree = h('div', { width: 1200, height: 630, display: 'flex', flexDirection: 'column', backgroundColor: '#FFFFFF', padding: '64px 72px', fontFamily: 'Instrument Sans', color: '#18191D' }, [
+  { type: 'img', props: { src: `data:image/svg+xml;base64,${wordmark.toString('base64')}`, width: 300, height: 60 } },
+  h('div', { marginTop: 56, fontSize: 68, fontWeight: 600, lineHeight: 1.04, letterSpacing: -2.6, maxWidth: 980 }, 'From boxes of paper to a Medicaid-ready file.'),
+  h('div', { marginTop: 22, fontSize: 28, color: '#3B3C43' }, 'DossierIQ, for elder law and estate firms'),
+  h('div', { marginTop: 'auto', display: 'flex', flexDirection: 'column' }, [
+    h('div', { display: 'flex', justifyContent: 'space-between', fontSize: 20, color: '#6A6B73', marginBottom: 10 }, [h('div', {}, 'Statement coverage, 60 months'), h('div', {}, 'pasi.llc')]),
+    h('div', { display: 'flex', height: 26 }, [...months].map((c) => h('div', { flex: 1, marginRight: 2, borderRadius: 3, backgroundColor: colour[c] }, []))),
+  ]),
+]);
 
 const svg = await satori(tree, {
   width: 1200,
   height: 630,
   fonts: [
-    { name: 'Playfair Display', data: font('playfair-display', 'playfair-display-latin-700-normal.woff'), weight: 700, style: 'normal' },
-    { name: 'Playfair Display', data: font('playfair-display', 'playfair-display-latin-600-normal.woff'), weight: 600, style: 'normal' },
-    { name: 'Inter', data: font('inter', 'inter-latin-400-normal.woff'), weight: 400, style: 'normal' },
+    { name: 'Instrument Sans', data: font('instrument-sans-latin-400-normal.woff'), weight: 400, style: 'normal' },
+    { name: 'Instrument Sans', data: font('instrument-sans-latin-600-normal.woff'), weight: 600, style: 'normal' },
   ],
 });
 const png = new Resvg(svg, { fitTo: { mode: 'width', value: 1200 } }).render().asPng();
-const out = await sharp(png).jpeg({ quality: 86, mozjpeg: true }).toBuffer();
-writeFileSync(path.resolve('..', 'assets', 'img', 'og.jpg'), out);
-console.log(`og.jpg ${(out.length / 1024).toFixed(0)} KB`);
+const out = await sharp(png).png({ compressionLevel: 9, palette: true }).toBuffer();
+writeFileSync(path.resolve('..', 'src', 'assets', 'img', 'og.png'), out);
+console.log(`og.png ${(out.length / 1024).toFixed(0)} KB`);

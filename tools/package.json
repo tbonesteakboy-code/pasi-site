@@ -8,6 +8,7 @@
     "og": "node build-og.mjs"
   },
   "devDependencies": {
+    "@fontsource/instrument-sans": "^5.3.0",
     "@fontsource/inter": "^5.3.0",
     "@fontsource/playfair-display": "^5.3.0",
     "@resvg/resvg-js": "^2.6.2",
