@@ -1,0 +1,15 @@
+---
+layout: base.njk
+noindex: true
+title: "Your application didn't go through | DossierIQ by PASI"
+description: "The founding-firm application didn't go through. Email PASI instead."
+---
+<article class="page wrap narrow">
+  <h1>Your application didn't go through.</h1>
+  <p class="page-lead">Something stopped it: a required answer was missing, there were too many tries from your network in a short time, or our server had a problem. We didn't save an application from this attempt.</p>
+  <div class="cta">
+    <a class="btn btn-primary btn-lg" href="mailto:{{ site.email }}?subject=Founding%20firm%20application">Email {{ site.email }}</a>
+    <a class="btn btn-lg" href="/founding-firms/#apply">Try the form again</a>
+  </div>
+  <p class="fine">In the email, include your name, firm and state, and we'll reply the same way.</p>
+</article>
