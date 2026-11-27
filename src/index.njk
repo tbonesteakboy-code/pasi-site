@@ -20,7 +20,11 @@ savings: "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo"
 <div class="stage">
   <div class="wrap">
     <figure class="product">
-      <div class="app" role="img" aria-label="DossierIQ's matter screen for a fictional Medicaid planning client: the checklist with bank statements selected, showing statement coverage month by month for the 60-month look-back, with missing months and months to review.">
+      <div class="lead-in">
+        <h2 id="product-h">One client's file, at a glance</h2>
+        <p>This is a fictional Medicaid planning client at a demo firm.<span class="wide-only"> The checklist is on the left; the item you pick opens on the right.</span></p>
+      </div>
+      <div class="app" role="img" aria-label="DossierIQ's matter screen for a fictional Medicaid planning client: the checklist with bank statements selected, showing statement coverage month by month for the 60-month look-back, with missing months and months to review, and a lead found in the matter's documents.">
         <div class="app-nav" aria-hidden="true">
           <div class="app-brand"><img src="/assets/brand/dossieriq-mark-24-light.svg" alt="" width="18" height="18"><span>DossierIQ<small>PASI Demo Firm</small></span></div>
           <span>Matters</span>
@@ -31,9 +35,9 @@ savings: "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo"
           <p class="app-title">Harold E. Whitcomb</p>
           <p class="app-meta">Medicaid planning. 166 documents, 2 to review.</p>
           <p class="app-sect">Checklist</p>
-          <p class="app-grp">Needs you, 4</p>
+          <p class="app-grp"><span class="pin">1</span>Needs you, 4</p>
           <div class="app-row sel"><span><b>Bank statements</b><small>6 months missing, 2 to review</small></span><span class="dot dot-review">To review</span></div>
-          <div class="app-row"><span><b>Life insurance</b><small>Premiums to Harbor Mutual found</small></span><span class="dot dot-missing">Missing</span></div>
+          <div class="app-row"><span><b>Life insurance</b></span><span class="dot dot-missing">Missing</span></div>
           <div class="app-row"><span><b>Annuities</b></span><span class="dot dot-missing">Missing</span></div>
           <div class="app-row"><span><b>Mortgage statements</b></span><span class="dot dot-missing">Missing</span></div>
           <p class="app-grp">Waiting on the family, 1</p>
@@ -44,16 +48,24 @@ savings: "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo"
           <p class="app-eyebrow">Checklist item, critical</p>
           <p class="app-item">Bank statements</p>
           <p><span class="dot dot-review">2 to review, 6 months missing</span></p>
-          <p class="app-label">Statement coverage, Sep 2021 to Aug 2026</p>
+          <p class="app-label"><span class="pin">2</span>Statement coverage, Sep 2021 to Aug 2026</p>
           <div class="acct"><span>Brightwater Community Bank …4037</span><span>52/60</span></div>
           <div class="strip">{% for c in checking | months %}<i class="{{ c }}"></i>{% endfor %}</div>
           <div class="years"><span></span><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span></div>
           <p class="app-label">How to get it</p>
-          <p class="app-text">Ways to get it, by who acts, with official sources.</p>
-          <div class="app-foot"><span class="mini mini-primary">Request missing months</span><span class="mini">Already requested</span></div>
+          <p class="app-text">Leads in this matter's documents</p>
+          <p class="app-lead"><span class="pin">3</span><b>Marlow Teachers Credit Union</b></p>
+          <p class="app-lead-why">Monthly transfers in the checking statements. From: Brightwater …4037, Mar 2025</p>
+          <div class="app-foot"><span class="pin">4</span><span class="mini mini-primary">Request missing months</span></div>
         </div>
       </div>
-      <figcaption>A demo firm with a fictional client and accounts.</figcaption>
+      <ol class="callouts">
+        <li><span class="n" aria-hidden="true">1</span><span><b>What needs you.</b> The checklist is sorted by what needs attention: missing, to review, waiting on the family, and on file.</span></li>
+        <li><span class="n" aria-hidden="true">2</span><span><b>Sixty months, account by account.</b> Each statement month is on file, to review or missing, so the gaps show here (six months missing in this example) before the caseworker finds them.</span></li>
+        <li><span class="n" aria-hidden="true">3</span><span><b>Leads from the documents.</b> In an item's “How to get it” panel, one click on “Look for leads” reads this matter's documents and lists clues to what's missing, such as premium payments to an insurer that point to a life insurance policy, each with the statement it was found in.</span></li>
+        <li><span class="n" aria-hidden="true">4</span><span><b>How to get it, and a request to send.</b> For each item: who can ask for it, official sources and county links, and a draft request your staff can edit and send to the family with a secure upload link.</span></li>
+      </ol>
+      <figcaption>A fictional client at a demo firm. No real client data.</figcaption>
     </figure>
   </div>
 </div>
@@ -79,7 +91,7 @@ savings: "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo"
   <div class="wrap feat">
     <div>
       <p class="step">1. Scan and upload</p>
-      <h3>It reads the boxes so your paralegal doesn't have to.</h3>
+      <h3>Scan a stack. Get separate, named documents.</h3>
       <p>Scan a stack of paper on your office PC. DossierIQ Scan splits it into individual documents, names each one, and files it in the matter's folder in your firm's own Google Drive or SharePoint. You can also upload files and email exports. Anything uncertain is flagged for your review.</p>
     </div>
     <div class="moment" role="img" aria-label="A list of scanned documents DossierIQ Scan split and named, one flagged for review.">
@@ -144,11 +156,55 @@ savings: "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo"
   <div class="specifics">
     <div><b>The 60-month look-back</b><span>Coverage tracked by account and by month, so gaps show up before the caseworker finds them.</span></div>
     <div><b>Medicaid packet export</b><span>Documents grouped by checklist item, with a cover sheet listing what's included and what's still missing.</span></div>
-    <div><b>The digital estate</b><span>Upload a client's email export and DossierIQ surfaces online accounts and recurring charges, so subscriptions and accounts don't get missed.</span></div>
+    <div><b>How to get it</b><span>For each checklist item: who can ask for it, official sources and county links, and a draft request for your staff to review and send.</span></div>
+    <div><b>Requests to the family</b><span>Ask for one missing item with an expiring upload link. What the family sends lands on that item for your staff to confirm.</span></div>
     <div><b>Your judgment stays in charge</b><span>DossierIQ organizes and flags; attorneys and staff confirm. It's guidance, not legal advice.</span></div>
     <div><b>Google Workspace and Microsoft 365</b><span>Keep documents in your firm's Google Drive or SharePoint, and sign in with a Google or Microsoft work account.</span></div>
   </div>
   <p class="closing">Behind every file is a family trying to get it right.</p>
+</section>
+
+<section class="section wrap" id="digital-estate" aria-labelledby="digital-h">
+  <h2 id="digital-h">The paper is only part of the picture.</h2>
+  <p class="section-lead">Banking, investments, savings and insurance live in email inboxes and online portals as much as in shoeboxes.</p>
+  <div class="feat feat-top">
+    <div>
+      <ul class="how">
+        <li><b>Start with an email export.</b> After the firm records its authority, upload a client's export (Gmail Takeout, or any mailbox via Thunderbird). DossierIQ reads only account-related messages and builds an account map. Email bodies aren't stored.</li>
+        <li><b>Attachments filed.</b> Statements and bills attached to those messages go to the matter's “Email attachments” folder and count toward the checklist and coverage. Family email isn't saved.</li>
+        <li><b>Accounts and charges in one place.</b> Each account once, with its documents, and the recurring bills someone may need to stop, worked out from all of the matter's statements, not only the email.</li>
+        <li><b>Leads become requests.</b> On a checklist item, “Look for leads” reads every document, emailed ones included, and lists clues with the document each came from.</li>
+      </ul>
+      <p class="how-close">It helps your firm find what would otherwise be missed. It can't promise to find everything, and your team decides what matters.</p>
+    </div>
+    <div>
+      <div class="moment" role="img" aria-label="An email export for a fictional client: 14 accounts found and 6 recurring charges to stop, with the bank, investment and insurance statements filed from it.">
+        <div class="card" aria-hidden="true">
+          <p class="card-head"><b>Email export, Harold E. Whitcomb</b><span>Gmail Takeout, read Nov 12</span></p>
+          <p class="card-note card-sub">42 statements and bills from it were filed to the matter.</p>
+          <div class="tally"><div><b>14</b><span>accounts found</span></div><div><b>6</b><span>recurring charges to stop</span></div></div>
+          <ul class="found">
+            <li><span>Brightwater Community Bank<small>12 statements filed</small></span><span class="chip">Bank</span></li>
+            <li><span>Calloway Ridge Investments<small>4 quarterly statements filed</small></span><span class="chip">Investment</span></li>
+            <li><span>Harbor Mutual Life<small>3 premium notices filed</small></span><span class="chip">Insurance</span></li>
+            <li><span>Riverside Streaming<small>$15.99 a month</small></span><span class="chip">Recurring charge</span></li>
+          </ul>
+          <p class="card-note">Authority recorded Nov 10. Email bodies aren't stored.</p>
+        </div>
+      </div>
+      <div class="lead-step">
+        <p class="lead-cap">Then, on a checklist item, “Look for leads”:</p>
+        <div class="moment moment-sm" role="img" aria-label="A lead on the missing life insurance item: quarterly premiums to Harbor Mutual Life in the checking statements, from an email attachment.">
+          <div class="card" aria-hidden="true">
+            <p class="card-head"><b>Life insurance</b><span class="dot dot-missing">Missing</span></p>
+            <p class="card-note card-sub">How to get it, leads in this matter's documents</p>
+            <p><b class="w5">Harbor Mutual Life</b></p>
+            <p class="card-note card-tight">Quarterly premiums in the checking statements. From: Brightwater …4037, Feb 2025 (email attachment)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="section wrap" id="security" aria-labelledby="security-h">
@@ -157,7 +213,7 @@ savings: "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo"
   <ul class="ruled ruled-2">
     <li><b>Firm-owned storage.</b> Documents are stored in your firm's own Google Drive or SharePoint, not in a DossierIQ warehouse.</li>
     <li><b>Secure sharing with a record.</b> Clean Room links expire, require a one-time code, and record every view and download in a tamper-evident log.</li>
-    <li><b>Authority before access.</b> Sensitive discovery steps, like connecting a client's mailbox, require a recorded statement of the firm's authority first.</li>
+    <li><b>Authority before access.</b> Sensitive discovery steps, like reading a client's email, require a recorded statement of the firm's authority first.</li>
     <li><b>We don't sell your data.</b> Not your firm's, not your clients'.</li>
   </ul>
   <p class="more"><a href="/security/">Read more about security</a></p>
