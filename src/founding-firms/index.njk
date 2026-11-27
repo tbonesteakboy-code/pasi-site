@@ -1,0 +1,122 @@
+---
+layout: base.njk
+title: "Become a founding firm | DossierIQ by PASI"
+description: "A small group of elder law and estate firms use DossierIQ at no cost during the pilot, with hands-on setup, and help shape what we build next. Apply in about two minutes."
+---
+<article class="page wrap">
+  <h1>Become a DossierIQ founding firm.</h1>
+  <p class="page-lead">We're working closely with a small group of elder law and estate firms to make DossierIQ fit real practice. Founding firms use DossierIQ at no cost during the pilot, get hands-on setup and training, and help shape what we build next. We're starting in Pennsylvania and glad to hear from firms anywhere in the US.</p>
+
+  <div class="two-lists">
+    <section aria-labelledby="gets-h">
+      <h2 id="gets-h">What your firm gets</h2>
+      <ul class="ruled">
+        <li>DossierIQ at no cost during the pilot</li>
+        <li>Hands-on setup and training for your team</li>
+        <li>A direct line to the founder; your feedback shapes what we build next</li>
+      </ul>
+    </section>
+    <section aria-labelledby="asks-h">
+      <h2 id="asks-h">What we ask</h2>
+      <ul class="ruled">
+        <li>Use DossierIQ on real matters for the pilot period</li>
+        <li>Short feedback conversations along the way</li>
+        <li>If it helps you, a reference or a brief case study (only with your permission)</li>
+      </ul>
+    </section>
+  </div>
+
+  <section class="faq" aria-labelledby="faq-h">
+    <h2 id="faq-h">Questions</h2>
+    <details>
+      <summary>What does the pilot cost?</summary>
+      <p>Nothing. Founding firms use DossierIQ at no cost during the pilot.</p>
+    </details>
+    <details>
+      <summary>Which email and storage systems does it work with?</summary>
+      <p>Google Workspace and Microsoft 365. Documents stay in your firm's own Google Drive or SharePoint, and your team signs in with a Google or Microsoft work account.</p>
+    </details>
+    <details>
+      <summary>Do we have to be in Pennsylvania?</summary>
+      <p>No. We're starting in Pennsylvania, and we're glad to hear from firms anywhere in the US.</p>
+    </details>
+    <details>
+      <summary>Is DossierIQ legal advice?</summary>
+      <p>No. DossierIQ organizes and flags; attorneys and staff confirm. PASI is a software company, not a law firm.</p>
+    </details>
+  </section>
+
+  <section class="apply" id="apply" aria-labelledby="apply-h">
+    <h2 id="apply-h">Apply</h2>
+    <p class="fine">This takes about two minutes. We'll only use your answers to reply about the pilot. Fields marked "required" are needed; the rest are optional.</p>
+    <form class="form" action="{{ site.applyUrl }}" method="post">
+      <div class="field">
+        <label for="f-name">Your name <span class="req">required</span></label>
+        <input id="f-name" name="name" type="text" required minlength="2" maxlength="200" autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="f-email">Work email <span class="req">required</span></label>
+        <input id="f-email" name="email" type="email" required maxlength="254" autocomplete="email" aria-describedby="f-email-help">
+        <p class="help" id="f-email-help">Please use your firm's address, not a personal one.</p>
+      </div>
+      <div class="field">
+        <label for="f-firm">Firm name <span class="req">required</span></label>
+        <input id="f-firm" name="firm" type="text" required minlength="2" maxlength="200" autocomplete="organization">
+      </div>
+      <div class="field">
+        <label for="f-state">State where the firm practices <span class="req">required</span></label>
+        <select id="f-state" name="state" required>
+          <option value="">Choose a state</option>
+          {% for s in founding.states %}<option>{{ s }}</option>{% endfor %}
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-role">Your role</label>
+        <select id="f-role" name="role">
+          <option value="">Choose one</option>
+          {% for r in founding.roles %}<option>{{ r }}</option>{% endfor %}
+        </select>
+      </div>
+      <fieldset class="field">
+        <legend>Practice areas</legend>
+        {% for a in founding.practiceAreas %}<label class="check"><input type="checkbox" name="practiceAreas" value="{{ a }}"> {{ a }}</label>{% endfor %}
+      </fieldset>
+      <div class="field">
+        <label for="f-size">Firm size</label>
+        <select id="f-size" name="firmSize">
+          <option value="">Choose one</option>
+          {% for s in founding.firmSizes %}<option>{{ s }}</option>{% endfor %}
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-mail">Email and file storage system</label>
+        <select id="f-mail" name="mailSystem" aria-describedby="f-mail-help">
+          <option value="">Choose one</option>
+          {% for m in founding.mailSystems %}<option>{{ m }}</option>{% endfor %}
+        </select>
+        <p class="help" id="f-mail-help">DossierIQ works with Google Drive and SharePoint.</p>
+      </div>
+      <div class="field">
+        <label for="f-note">What slows your intake down?</label>
+        <textarea id="f-note" name="intakeNote" rows="3" maxlength="300" aria-describedby="f-note-help"></textarea>
+        <p class="help" id="f-note-help">A sentence or two is plenty (300 characters). Please don't include client names or details.</p>
+      </div>
+      <div class="field">
+        <label for="f-heard">How did you hear about us?</label>
+        <select id="f-heard" name="heardFrom">
+          <option value="">Choose one</option>
+          {% for h in founding.heardFrom %}<option>{{ h }}</option>{% endfor %}
+        </select>
+      </div>
+      <div class="hp" aria-hidden="true">
+        <label for="f-website">Leave this empty</label>
+        <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <div class="field">
+        <label class="check consent"><input type="checkbox" name="consent" value="yes" required> <span>{{ founding.consentText }} See the <a href="{{ site.privacyUrl }}">privacy notice</a>. <span class="req">required</span></span></label>
+      </div>
+      <button class="btn btn-primary btn-lg" type="submit">Apply as a founding firm</button>
+      <p class="fine fallback">If the form doesn't send, email <a href="mailto:{{ site.email }}?subject=Founding%20firm%20application">{{ site.email }}</a> with your name, firm and state, and we'll reply the same way.</p>
+    </form>
+  </section>
+</article>

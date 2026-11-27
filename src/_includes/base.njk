@@ -7,6 +7,7 @@
 <meta name="description" content="{{ description }}">
 <meta name="theme-color" content="#FFFFFF">
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+{% if noindex %}<meta name="robots" content="noindex">{% endif %}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
@@ -30,13 +31,24 @@
     <a class="top-mark" href="/" aria-label="PASI home"><img src="/assets/brand/pasi-wordmark-short-light.svg" alt="" width="64" height="22"></a>
     <nav class="top-nav" aria-label="Main">
       <a href="/#how">How it works</a>
-      <a href="/#security">Security</a>
-      <a href="/#founding">Founding firms</a>
-      <a href="/#about">About</a>
+      <a href="/security/"{% if page.url == "/security/" %} aria-current="page"{% endif %}>Security</a>
+      <a href="/founding-firms/"{% if page.url == "/founding-firms/" %} aria-current="page"{% endif %}>Founding firms</a>
+      <a href="/about/"{% if page.url == "/about/" %} aria-current="page"{% endif %}>About</a>
     </nav>
     <div class="top-actions">
       <a class="link" href="{{ site.appUrl }}">Sign in</a>
-      <a class="btn btn-primary" href="{{ site.formUrl }}" target="_blank" rel="noopener">Become a founding firm<span class="sr-only"> (opens a form in a new tab)</span></a>
+      <a class="btn btn-primary" href="/founding-firms/#apply">Become a founding firm</a>
+      {# Phones: the pages in a disclosure, no JavaScript. #}
+      <details class="menu">
+        <summary>Menu</summary>
+        <nav class="menu-panel" aria-label="Main">
+          <a href="/#how">How it works</a>
+          <a href="/security/">Security</a>
+          <a href="/founding-firms/">Founding firms</a>
+          <a href="/about/">About</a>
+          <a href="{{ site.appUrl }}">Sign in to DossierIQ</a>
+        </nav>
+      </details>
     </div>
   </div>
 </header>
