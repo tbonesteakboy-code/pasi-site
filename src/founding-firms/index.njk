@@ -113,7 +113,7 @@ description: "A small group of elder law and estate firms use DossierIQ at no co
         <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
       </div>
       <div class="field">
-        <label class="check consent"><input type="checkbox" name="consent" value="yes" required> <span>{{ founding.consentText }} See the <a href="{{ site.privacyUrl }}">privacy notice</a>. <span class="req">required</span></span></label>
+        <label class="check consent"><input type="checkbox" name="consent" value="yes" required> <span>{{ founding.consentText }} See the <a href="{{ site.privacyUrl }}" target="_blank" rel="noopener">privacy notice<span class="sr-only"> (opens in a new tab, so your answers stay here)</span></a>. <span class="req">required</span></span></label>
       </div>
       <button class="btn btn-primary btn-lg" type="submit">Apply as a founding firm</button>
       <p class="fine fallback">If the form doesn't send, email <a href="mailto:{{ site.email }}?subject=Founding%20firm%20application">{{ site.email }}</a> with your name, firm and state, and we'll reply the same way.</p>

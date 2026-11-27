@@ -43,9 +43,9 @@
         <summary>Menu</summary>
         <nav class="menu-panel" aria-label="Main">
           <a href="/#how">How it works</a>
-          <a href="/security/">Security</a>
-          <a href="/founding-firms/">Founding firms</a>
-          <a href="/about/">About</a>
+          <a href="/security/"{% if page.url == "/security/" %} aria-current="page"{% endif %}>Security</a>
+          <a href="/founding-firms/"{% if page.url == "/founding-firms/" %} aria-current="page"{% endif %}>Founding firms</a>
+          <a href="/about/"{% if page.url == "/about/" %} aria-current="page"{% endif %}>About</a>
           <a href="{{ site.appUrl }}">Sign in to DossierIQ</a>
         </nav>
       </details>
