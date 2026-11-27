@@ -66,7 +66,7 @@ p { margin: 0; }
 
 .foot { border-top: 1px solid var(--border); padding: 40px 0 56px; color: var(--text-muted); font-size: 14px; }
 .foot-row { display: flex; justify-content: space-between; gap: 32px; flex-wrap: wrap; align-items: flex-start; }
-.foot-mark { width: 220px; height: auto; margin-bottom: 14px; }
+.foot-mark { width: 96px; height: auto; margin-bottom: 14px; }
 .foot-links { display: flex; flex-wrap: wrap; gap: 4px 22px; justify-content: flex-end; }
 .foot-links a { color: var(--text-2); text-decoration: none; min-height: 32px; display: inline-flex; align-items: center; }
 .foot-links a:hover { color: var(--text); text-decoration: underline; }
@@ -92,6 +92,7 @@ p { margin: 0; }
 /* Markers sit inline before the label they mark, so they track the drawing at every width; logo ink, apart from the status colours. */
 .pin { display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; background: var(--ink); color: #FFFFFF; font-size: 11px; font-weight: 600; line-height: 1; vertical-align: 1px; margin-right: 6px; flex: none; }
 .app-foot .pin { align-self: center; margin-right: 0; }
+.mini { white-space: nowrap; }
 .app-lead { font-size: 12.5px; margin-top: 2px !important; }
 .app-lead b { font-weight: 500; }
 .app-lead-why { color: var(--text-muted); font-size: 12px; margin-left: 24px !important; }
@@ -241,7 +242,7 @@ p { margin: 0; }
 .reading .end { margin-top: 40px; }
 .narrow > * { max-width: 60ch; }
 .back { margin-top: 32px; }
-.about-mark { width: 300px; height: auto; margin-bottom: 40px; }
+.about-mark { width: 360px; height: auto; margin-bottom: 40px; }
 .signoff { color: var(--text-muted); }
 .more { margin-top: 20px; }
 .top-nav a[aria-current="page"] { color: var(--text); font-weight: 500; }

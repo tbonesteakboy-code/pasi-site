@@ -23,7 +23,11 @@ for (const [label, width, scale] of [['1440', 1440, 1], ['375', 375, 2]]) {
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     if (overflow > 0) problems.push(`${label} ${p}: page is ${overflow}px wider than the viewport`);
     const name = `${(p.replace(/\//g, '_').replace(/^_|_$/g, '') || 'home')}-${label}.png`;
-    await page.screenshot({ path: path.join(OUT, name), fullPage: true });
+    // Size the viewport to the whole page instead of stitching (stitching repeated the hero on phones).
+    const height = await page.evaluate(() => document.documentElement.scrollHeight);
+    await page.setViewport({ width, height, deviceScaleFactor: scale, isMobile: width < 768, hasTouch: width < 768 });
+    await page.screenshot({ path: path.join(OUT, name) });
+    await page.setViewport({ width, height: 900, deviceScaleFactor: scale, isMobile: width < 768, hasTouch: width < 768 });
     console.log('saved', name);
   }
   await page.close();
