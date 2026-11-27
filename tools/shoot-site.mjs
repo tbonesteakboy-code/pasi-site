@@ -1,5 +1,5 @@
 // Full-page screenshots of the LOCAL pasi.llc build (eleventy --serve on :8099) at desktop and phone widths, for review.
-// Usage: OUT=<dir> PAGES=/,/security/ node shoot-site.mjs
+// Usage: OUT=<dir> PAGES=/,/security/ node shoot-site.mjs  (phones at 1x: Chrome can't capture past 16384 px, so 2x tiled the page)
 import puppeteer from 'puppeteer-core';
 import path from 'node:path';
 
@@ -13,7 +13,7 @@ const browser = await puppeteer.launch({
   userDataDir: process.env.PROFILE,
 });
 const problems = [];
-for (const [label, width, scale] of [['1440', 1440, 1], ['375', 375, 2]]) {
+for (const [label, width, scale] of [['1440', 1440, 1], ['375', 375, 1]]) {
   const page = await browser.newPage();
   page.on('console', (m) => { if (m.type() === 'error' || m.type() === 'warning') problems.push(`${label} ${m.type()}: ${m.text().slice(0, 200)}`); });
   await page.setViewport({ width, height: 900, deviceScaleFactor: scale, isMobile: width < 768, hasTouch: width < 768 });
